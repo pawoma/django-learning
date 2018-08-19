@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>list</title>
+    <meta charset="UTF-8">
+    <title>list</title>
 </head>
+
 <body>
-	<div style="width:100vw;text-align:center;">
-		<h1>hi Bruce</h1>
-	<h4>this is template  first</h4>
-	</div>
+    <div style="width:100vw;text-align:center;">
+        <h1>hi Bruce</h1>
+        <ul>
+            {% for post in posts %}
+            <li>
+            	<p>published: {{ post.published_date }}</p>
+	            <h1><a href="">{{ post.title }}</a></h1>
+	            <p>{{ post.text|linebreaksbr }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
+
 </html>
